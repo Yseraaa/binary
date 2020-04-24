@@ -1,0 +1,717 @@
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  src: url("../fonts/MyriadPro-Regular.eot");
+  src: url("../fonts/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadPro-Regular.woff") format("woff"), url("../fonts/MyriadPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+
+	Eric Meyer					:: https://meyerweb.com
+	HTML5 Doctor				:: https://html5doctor.com
+	and the HTML5 Boilerplate	:: https://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+/* line 15, binary/scss/_null.scss */
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* line 25, binary/scss/_null.scss */
+article, aside, figure, footer, header, nav, section, details, summary {
+  display: block; }
+
+/* Handle box-sizing while better addressing child elements:
+   https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+/* line 29, binary/scss/_null.scss */
+html {
+  box-sizing: border-box; }
+
+/* line 33, binary/scss/_null.scss */
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects
+*/
+/* line 43, binary/scss/_null.scss */
+img,
+object,
+embed {
+  max-width: 100%; }
+
+/*
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	 In fact, it *will* cause problems with Google Maps' controls at small size.
+	If this is the case for you, try uncommenting the following:
+
+#map img {
+		max-width: none;
+}
+*/
+/* force a vertical scrollbar to prevent a jumpy page */
+/* line 58, binary/scss/_null.scss */
+html {
+  overflow-y: scroll; }
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+/* line 62, binary/scss/_null.scss */
+ul {
+  list-style: none; }
+
+/* line 64, binary/scss/_null.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 66, binary/scss/_null.scss */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+/* line 71, binary/scss/_null.scss */
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* line 73, binary/scss/_null.scss */
+del {
+  text-decoration: line-through; }
+
+/* line 75, binary/scss/_null.scss */
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help; }
+
+/* tables still need cellspacing="0" in the markup */
+/* line 78, binary/scss/_null.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 79, binary/scss/_null.scss */
+th {
+  font-weight: bold;
+  vertical-align: bottom; }
+
+/* line 80, binary/scss/_null.scss */
+td {
+  font-weight: normal;
+  vertical-align: top; }
+
+/* line 82, binary/scss/_null.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/* line 84, binary/scss/_null.scss */
+input, select {
+  vertical-align: middle; }
+
+/* line 86, binary/scss/_null.scss */
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */ }
+
+/* line 93, binary/scss/_null.scss */
+input[type="radio"] {
+  vertical-align: text-bottom; }
+
+/* line 94, binary/scss/_null.scss */
+input[type="checkbox"] {
+  vertical-align: bottom; }
+
+/* line 95, binary/scss/_null.scss */
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline; }
+
+/* line 96, binary/scss/_null.scss */
+.ie6 input {
+  vertical-align: text-bottom; }
+
+/* line 98, binary/scss/_null.scss */
+select, input, textarea {
+  font: 99% sans-serif; }
+
+/* line 100, binary/scss/_null.scss */
+table {
+  font-size: inherit;
+  font: 100%; }
+
+/* line 102, binary/scss/_null.scss */
+small {
+  font-size: 85%; }
+
+/* line 104, binary/scss/_null.scss */
+strong {
+  font-weight: bold; }
+
+/* line 106, binary/scss/_null.scss */
+td, td img {
+  vertical-align: top; }
+
+/* Make sure sup and sub don't mess with your line-heights https://gist.github.com/413930 */
+/* line 109, binary/scss/_null.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative; }
+
+/* line 110, binary/scss/_null.scss */
+sup {
+  top: -0.5em; }
+
+/* line 111, binary/scss/_null.scss */
+sub {
+  bottom: -0.25em; }
+
+/* standardize any monospaced elements */
+/* line 114, binary/scss/_null.scss */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif; }
+
+/* hand cursor on clickable elements */
+/* line 117, binary/scss/_null.scss */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+/* line 125, binary/scss/_null.scss */
+button, input, select, textarea {
+  margin: 0; }
+
+/* make buttons play nice in IE */
+/* line 128, binary/scss/_null.scss */
+button,
+input[type=button] {
+  width: auto;
+  overflow: visible; }
+
+/* scale images in IE7 more attractively */
+/* line 132, binary/scss/_null.scss */
+.ie7 img {
+  -ms-interpolation-mode: bicubic; }
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+/* let's clear some floats */
+/* line 140, binary/scss/_null.scss */
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden; }
+
+/* line 141, binary/scss/_null.scss */
+.clearfix:after {
+  clear: both; }
+
+/* line 142, binary/scss/_null.scss */
+.clearfix {
+  zoom: 1; }
+
+/* line 3, binary/scss/style.scss */
+.container {
+  max-width: 1920px;
+  margin: 0 auto; }
+
+/* line 8, binary/scss/style.scss */
+.header {
+  position: relative;
+  background-image: url(../img/bgimage.jpg);
+  max-width: 1920px;
+  height: 1080px; }
+  /* line 13, binary/scss/style.scss */
+  .header .header__logo {
+    text-align: center;
+    height: 290px; }
+  /* line 17, binary/scss/style.scss */
+  .header .header__logo_img {
+    display: inline-block;
+    margin-top: 160px; }
+  /* line 21, binary/scss/style.scss */
+  .header .header__text {
+    text-align: center;
+    margin-top: 159px; }
+  /* line 25, binary/scss/style.scss */
+  .header .h_text1 {
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+    font-size: 34px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 5.43px; }
+  /* line 34, binary/scss/style.scss */
+  .header .h_text2 {
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+    line-height: 40px;
+    font-weight: 900;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 4.15px; }
+  /* line 43, binary/scss/style.scss */
+  .header .header__line {
+    text-align: center;
+    margin-top: 50px; }
+  /* line 47, binary/scss/style.scss */
+  .header .header__button {
+    display: block;
+    margin-top: 227px;
+    border: 1px solid #c2c8d5;
+    width: 182px;
+    height: 47px;
+    padding-top: 10px; }
+    /* line 54, binary/scss/style.scss */
+    .header .header__button a {
+      text-decoration: none; }
+    /* line 57, binary/scss/style.scss */
+    .header .header__button:hover {
+      opacity: 0.5; }
+  /* line 61, binary/scss/style.scss */
+  .header .h_button {
+    width: 182px;
+    height: 47px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.67px; }
+  /* line 72, binary/scss/style.scss */
+  .header .header__arrowdown {
+    text-align: center;
+    margin-top: 75px; }
+
+/* line 78, binary/scss/style.scss */
+.nav {
+  text-align: center;
+  max-width: 1920px;
+  margin-top: 20px; }
+  /* line 82, binary/scss/style.scss */
+  .nav .nav_link {
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    color: #3c3c3c;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-right: 50px; }
+    /* line 90, binary/scss/style.scss */
+    .nav .nav_link:hover {
+      opacity: 0.7; }
+  /* line 94, binary/scss/style.scss */
+  .nav .nav_link_active {
+    color: #ada074;
+    font-weight: 700; }
+
+/* line 100, binary/scss/style.scss */
+.slider1 {
+  max-width: 1920px;
+  height: 700px; }
+  /* line 103, binary/scss/style.scss */
+  .slider1 .slider1__about {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    color: #000000;
+    font-size: 34px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 8.95px;
+    margin-top: 154px; }
+    /* line 112, binary/scss/style.scss */
+    .slider1 .slider1__about:after {
+      content: '';
+      position: absolute;
+      width: 81px;
+      height: 1px;
+      background-color: #000;
+      margin: 0 0 0 -43px;
+      margin-top: 35px; }
+  /* line 122, binary/scss/style.scss */
+  .slider1 .slider1__desc {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    color: #868585;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 25.89px;
+    margin-top: 67px; }
+  /* line 131, binary/scss/style.scss */
+  .slider1 .slider1__apps {
+    margin-top: 70px;
+    display: flex; }
+    /* line 134, binary/scss/style.scss */
+    .slider1 .slider1__apps .slider1-about {
+      flex: 0 0 33.333%; }
+    /* line 137, binary/scss/style.scss */
+    .slider1 .slider1__apps .slider1-about__icon {
+      position: relative;
+      text-align: center;
+      padding-top: 30px;
+      border-radius: 50%;
+      width: 92px;
+      height: 92px;
+      border: 2px solid #f1f1f1;
+      margin: 0 auto; }
+    /* line 147, binary/scss/style.scss */
+    .slider1 .slider1__apps .slider1-about__title {
+      font-family: 'Lato', sans-serif;
+      margin-top: 40px;
+      text-align: center;
+      color: #000000;
+      font-size: 22px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 3.52px; }
+    /* line 157, binary/scss/style.scss */
+    .slider1 .slider1__apps .slider1-about__text {
+      font-family: 'Lato', sans-serif;
+      margin-top: 35px;
+      text-align: center;
+      color: #868585;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 26px; }
+
+/* line 169, binary/scss/style.scss */
+.slider2 {
+  max-width: 1920px;
+  max-height: auto;
+  background-color: #f3f3f3; }
+  /* line 173, binary/scss/style.scss */
+  .slider2 .slider2__portf {
+    display: inline-block;
+    margin-top: 107px;
+    font-family: 'Lato', sans-serif;
+    color: #000000;
+    font-size: 34px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 5.43px; }
+    /* line 182, binary/scss/style.scss */
+    .slider2 .slider2__portf:after {
+      content: '';
+      position: absolute;
+      width: 81px;
+      height: 1px;
+      background-color: #000;
+      margin: 0 0 0 -153px;
+      margin-top: 80px; }
+  /* line 192, binary/scss/style.scss */
+  .slider2 .slider2__nav {
+    text-align: center;
+    max-width: 1920px;
+    margin-top: 100px;
+    margin-left: 30px; }
+    /* line 197, binary/scss/style.scss */
+    .slider2 .slider2__nav .slider2_link {
+      text-decoration: none;
+      font-family: 'Lato', sans-serif;
+      margin-right: 50px;
+      color: #3c3c3c;
+      font-size: 15px;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-align-last: center; }
+      /* line 206, binary/scss/style.scss */
+      .slider2 .slider2__nav .slider2_link:hover {
+        opacity: 0.7; }
+    /* line 210, binary/scss/style.scss */
+    .slider2 .slider2__nav .nav_link_active {
+      color: #ada074;
+      font-weight: 700; }
+  /* line 215, binary/scss/style.scss */
+  .slider2 .slider2__items {
+    margin: auto;
+    margin-top: 136px;
+    max-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    /* line 222, binary/scss/style.scss */
+    .slider2 .slider2__items .slider2__block {
+      min-width: 538px;
+      min-height: 365px;
+      background-color: #eaeaea;
+      margin-bottom: 16px; }
+      /* line 227, binary/scss/style.scss */
+      .slider2 .slider2__items .slider2__block:hover {
+        opacity: 0.6;
+        border: 1px solid black; }
+  /* line 233, binary/scss/style.scss */
+  .slider2 .slider2__button {
+    display: inline-block;
+    margin-top: 64px;
+    margin-bottom: 62px;
+    text-align: center;
+    padding-top: 12px;
+    font-family: 'Lato', sans-serif;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.67px;
+    border: 1px solid black;
+    width: 182px;
+    height: 47px; }
+    /* line 248, binary/scss/style.scss */
+    .slider2 .slider2__button:hover {
+      opacity: 0.5; }
+
+/* line 254, binary/scss/style.scss */
+.slider3 {
+  max-width: 1920px;
+  height: 388px;
+  background-image: url(../img/slider3bg.jpg); }
+  /* line 258, binary/scss/style.scss */
+  .slider3 .slider3__name {
+    display: inline-block;
+    margin-top: 100px;
+    margin-left: 45%;
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 1.8px; }
+  /* line 268, binary/scss/style.scss */
+  .slider3 .slider3__items {
+    text-align: center;
+    margin-top: 93px; }
+    /* line 271, binary/scss/style.scss */
+    .slider3 .slider3__items img:hover {
+      opacity: 0.5; }
+    /* line 274, binary/scss/style.scss */
+    .slider3 .slider3__items .s3item {
+      margin-right: 110px; }
+
+/* line 280, binary/scss/style.scss */
+.contact {
+  height: 820px;
+  max-width: 1920px; }
+  /* line 283, binary/scss/style.scss */
+  .contact .contact__cont {
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    margin-top: 180px;
+    color: #000000;
+    font-size: 34px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 5.39px; }
+    /* line 293, binary/scss/style.scss */
+    .contact .contact__cont:after {
+      content: '';
+      position: absolute;
+      width: 81px;
+      height: 1px;
+      background-color: #000;
+      margin: 0 0 0 -140px;
+      margin-top: 80px; }
+  /* line 303, binary/scss/style.scss */
+  .contact .contact__all {
+    display: flex;
+    justify-content: center; }
+    /* line 306, binary/scss/style.scss */
+    .contact .contact__all .contact__left {
+      margin-right: 83px;
+      margin-top: 100px;
+      width: 384px; }
+      /* line 310, binary/scss/style.scss */
+      .contact .contact__all .contact__left .cont__form {
+        display: flex; }
+      /* line 313, binary/scss/style.scss */
+      .contact .contact__all .contact__left .cont__name {
+        display: flex;
+        flex-direction: column;
+        width: 161px;
+        color: #000000;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.84px; }
+      /* line 324, binary/scss/style.scss */
+      .contact .contact__all .contact__left .cont__email {
+        display: flex;
+        margin-left: 60px;
+        flex-direction: column;
+        width: 161px;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.84px; }
+      /* line 335, binary/scss/style.scss */
+      .contact .contact__all .contact__left .cont__msg {
+        display: flex;
+        flex-direction: column;
+        width: 161px;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.84px;
+        margin-top: 75px; }
+      /* line 346, binary/scss/style.scss */
+      .contact .contact__all .contact__left .formsg {
+        margin-top: 19px;
+        width: 383px;
+        height: 118px;
+        background-color: #f8f7f7;
+        border: none;
+        border-top: 1px solid black; }
+      /* line 354, binary/scss/style.scss */
+      .contact .contact__all .contact__left .marginform {
+        margin-top: 19px;
+        background-color: #f8f7f7;
+        border: none;
+        border-top: 1px solid black;
+        width: 161px;
+        height: 35px; }
+      /* line 362, binary/scss/style.scss */
+      .contact .contact__all .contact__left .contact__send {
+        font-family: 'Lato', sans-serif;
+        color: #000000;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.84px;
+        margin-top: 42px;
+        text-align: right; }
+        /* line 371, binary/scss/style.scss */
+        .contact .contact__all .contact__left .contact__send a {
+          text-decoration: none;
+          color: #000000; }
+          /* line 374, binary/scss/style.scss */
+          .contact .contact__all .contact__left .contact__send a:hover {
+            opacity: 0.5; }
+    /* line 380, binary/scss/style.scss */
+    .contact .contact__all .contact__text {
+      margin-top: 100px;
+      font-family: 'Lato', sans-serif;
+      color: #000000;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 26px; }
+      /* line 387, binary/scss/style.scss */
+      .contact .contact__all .contact__text span {
+        display: block;
+        font-weight: 700;
+        margin-top: 40px; }
+    /* line 393, binary/scss/style.scss */
+    .contact .contact__all .contact__social {
+      margin-top: 24px;
+      display: flex; }
+      /* line 396, binary/scss/style.scss */
+      .contact .contact__all .contact__social .contact__item {
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 29px;
+        height: 29px; }
+        /* line 401, binary/scss/style.scss */
+        .contact .contact__all .contact__social .contact__item:hover {
+          opacity: 0.5; }
+      /* line 405, binary/scss/style.scss */
+      .contact .contact__all .contact__social .contact__in {
+        padding-left: 7px; }
+      /* line 408, binary/scss/style.scss */
+      .contact .contact__all .contact__social .contact__fb {
+        padding-top: 2px;
+        padding-left: 9px; }
+      /* line 412, binary/scss/style.scss */
+      .contact .contact__all .contact__social .contact__item_margin {
+        margin-left: 10px; }
+    /* line 416, binary/scss/style.scss */
+    .contact .contact__all .email-bold {
+      margin-top: 15px;
+      font-family: 'Lato', sans-serif;
+      color: #000000;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 26px; }
+      /* line 423, binary/scss/style.scss */
+      .contact .contact__all .email-bold a {
+        text-decoration: none;
+        color: #000000;
+        font-weight: 700; }
+        /* line 427, binary/scss/style.scss */
+        .contact .contact__all .email-bold a:hover {
+          opacity: 0.5; }
+
+/* line 435, binary/scss/style.scss */
+.footer {
+  max-width: 1920px;
+  height: 274px;
+  background-color: #3c3c3c; }
+  /* line 439, binary/scss/style.scss */
+  .footer .footer__logo {
+    text-align: center;
+    height: 78px; }
+  /* line 443, binary/scss/style.scss */
+  .footer .footer__logo_img {
+    display: inline-block;
+    margin-top: 48px; }
+  /* line 447, binary/scss/style.scss */
+  .footer .footer__nav {
+    text-align: center;
+    margin-top: 100px; }
+  /* line 451, binary/scss/style.scss */
+  .footer .footer__nav_link {
+    margin: 0 auto;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #a4a4a4;
+    font-size: 14px;
+    font-weight: 400; }
+    /* line 458, binary/scss/style.scss */
+    .footer .footer__nav_link:hover {
+      opacity: 0.5; }
+  /* line 462, binary/scss/style.scss */
+  .footer .footer__copy {
+    font-family: 'Myriad Pro Regular';
+    text-align: center;
+    color: #6c6c6c;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 34px; }
+
+/*# sourceMappingURL=style.css.map */
